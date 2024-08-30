@@ -4,7 +4,7 @@ public class TestPersona {
 
 	public static void main(String[] args) {
 		Persona p2=new Persona();
-		
+		Persona p3=new Persona("Pablo",18,1.59);
 		Persona p; //Paso 1: declaro una variable llamada p de tipo persona
 		
 		p=new Persona(); //Paso 2: instanciar un objeto persona y se referencio en p
@@ -24,6 +24,10 @@ public class TestPersona {
 		System.out.println("*****");
 		System.out.println("p.nombre:" +p.getNombre());
 		System.out.println("p2.nombre:" +p2.getNombre());
+		
+		System.out.println("Nombre:"+p3.getNombre());
+		System.out.println("Edad:"+p3.getEdad());
+		System.out.println("Estatura:"+p3.getEstatura());
 	}
 
 }

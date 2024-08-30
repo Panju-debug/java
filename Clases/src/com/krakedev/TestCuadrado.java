@@ -11,9 +11,9 @@ public class TestCuadrado {
 		double p2;
 		double p3;
 		
-		Cuadrado c1=new Cuadrado();
-		Cuadrado c2=new Cuadrado();
-		Cuadrado c3=new Cuadrado();
+		Cuadrado c1=new Cuadrado(5);
+		Cuadrado c2=new Cuadrado(9);
+		Cuadrado c3=new Cuadrado(7);
 
 		c1.setLado(5);
 		c2.setLado(9);

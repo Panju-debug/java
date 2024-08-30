@@ -4,8 +4,8 @@ public class TestAuto {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Auto auto1= new Auto();
-		Auto auto2= new Auto();
+		Auto auto1= new Auto("Porche",2006,50000.00);
+		Auto auto2= new Auto("Kia",2020,16000.00);
 		
 		auto1.setMarca("Porche");
 		auto1.setAnio(2006);
