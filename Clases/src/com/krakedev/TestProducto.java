@@ -8,39 +8,39 @@ public class TestProducto {
 		Productos productoB= new Productos();
 		Productos productoC= new Productos();
 		
-		productoA.nombre="Paracetamol";
-		productoA.descripcion="Para el dolor de todo";
-		productoA.precio=3.00;
-		productoA.stockActual=4;
+		productoA.setNombre("Paracetamol");
+		productoA.setDescripcion("Para el dolor de todo");
+		productoA.setPrecio(3.00);
+		productoA.setStockActual(4);
 		
-		productoB.nombre="Lemonflu";
-		productoB.descripcion="Para la gripe";
-		productoB.precio=2.50;
-		productoB.stockActual=10;
+		productoB.setNombre("Lemonflu");
+		productoB.setDescripcion("Para la gripe");
+		productoB.setPrecio(2.50);
+		productoB.setStockActual(10);
 		
-		productoC.nombre="Condon";
-		productoC.descripcion="Mejor prevenir que lamentar";
-		productoC.precio=0.50;
-		productoC.stockActual=20;
+		productoC.setNombre("Condon");
+		productoC.setDescripcion("Mejor prevenir que lamentar");
+		productoC.setPrecio(0.50);
+		productoC.setStockActual(20);
 		
-		System.out.println("Producto:"+" "+productoA.nombre);
-		System.out.println("Descripcion:"+" "+productoA.descripcion);
-		System.out.println("Precio:"+" "+productoA.precio);
-		System.out.println("Stock:"+" "+productoA.stockActual);
-		
-		System.out.println("-----------------------------");
-		
-		System.out.println("Producto:"+" "+productoB.nombre);
-		System.out.println("Descripcion:"+" "+productoB.descripcion);
-		System.out.println("Precio:"+" "+productoB.precio);
-		System.out.println("Stock:"+" "+productoB.stockActual);
+		System.out.println("Producto:"+" "+productoA.getNombre());
+		System.out.println("Descripcion:"+" "+productoA.getDescripcion());
+		System.out.println("Precio:"+" "+productoA.getPrecio());
+		System.out.println("Stock:"+" "+productoA.getStockActual());
 		
 		System.out.println("-----------------------------");
 		
-		System.out.println("Producto:"+" "+productoC.nombre);
-		System.out.println("Descripcion:"+" "+productoC.descripcion);
-		System.out.println("Precio:"+" "+productoC.precio);
-		System.out.println("Stock:"+" "+productoC.stockActual);
+		System.out.println("Producto:"+" "+productoB.getNombre());
+		System.out.println("Descripcion:"+" "+productoB.getDescripcion());
+		System.out.println("Precio:"+" "+productoB.getPrecio());
+		System.out.println("Stock:"+" "+productoB.getStockActual());
+		
+		System.out.println("-----------------------------");
+		
+		System.out.println("Producto:"+" "+productoC.getNombre());
+		System.out.println("Descripcion:"+" "+productoC.getDescripcion());
+		System.out.println("Precio:"+" "+productoC.getPrecio());
+		System.out.println("Stock:"+" "+productoC.getStockActual());
 	}
 
 }
