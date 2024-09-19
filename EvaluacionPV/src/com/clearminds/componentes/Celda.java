@@ -5,7 +5,9 @@ public class Celda {
 	private int stock;
 	private String codigo;
 	
-
+	public Celda() {
+		
+	}
 	public Celda(String codigo) {
 	
 		this.codigo = codigo;
