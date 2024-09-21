@@ -1,0 +1,15 @@
+package com.krakedev.colecciones;
+
+public class TestAdminPersonas {
+
+	public static void main(String[] args) {
+		AdminPersonas admin=new AdminPersonas();
+		admin.agregar(new Persona("Mario","Benedetti",50));
+		admin.imprimir();
+		
+		
+		Persona p1=admin.buscarPorNombre("Mario");
+		System.out.println(p1);
+	}
+
+}
