@@ -34,14 +34,57 @@ public class Naipe {
 		numerosPosibles.add(numero11);
 		numerosPosibles.add(numero12);
 		numerosPosibles.add(numero13);
-		for(Numero numero:numerosPosibles) {
-			cartas.add(numero);
+		
+		for (int i = 0; i < numerosPosibles.size();i++) {
+            Numero posicion = numerosPosibles.get(i);
+            Carta carta1 = new Carta(posicion, "CR");
+            Carta carta2 = new Carta(posicion, "CN");
+            Carta carta3 = new Carta(posicion, "DI");
+            Carta carta4 = new Carta(posicion, "TR");
+            if (carta1 != null && carta2 != null && carta3 != null && carta4 != null) {
+                cartas.add(carta1);
+                cartas.add(carta2);
+                cartas.add(carta3);
+                cartas.add(carta4);
+            }
+        
 		}
 	}
-	
 	public ArrayList<Carta> getCartas() {
 		return cartas;
 	}
 	
-	
+	public ArrayList<Carta> barajar(){
+		ArrayList<Carta> cartasBarajadas=new ArrayList<>();
+		
+		for(Carta carta:cartas) {
+			int numberRandom=Random.obtenerPosicion();
+			carta=cartas.get(numberRandom);
+			cartasBarajadas.add(carta);
+			
+		}return cartasBarajadas;
+	}	
+	public ArrayList<Carta> auxiliar(){
+		ArrayList<Carta> auxiliar=new ArrayList<>();
+		Carta carta;
+		for(int i=0;i<=100;i++) {
+			int posicion=Random.obtenerPosicion();
+			carta=cartas.get(posicion);
+			if(carta.getEstado().equals("N")) {
+				auxiliar.add(carta);
+				carta.setEstado("C");
+			}
+		}if(auxiliar.size()<52) {
+			Carta cartaNoAgregada;
+			for(int i=0;i<cartas.size();i++) {
+				cartaNoAgregada=cartas.get(i);
+				if(cartaNoAgregada.getEstado().equals("N")) {
+					auxiliar.add(cartaNoAgregada);
+					cartaNoAgregada.setEstado("C");
+				}
+			}
+		}
+		
+		return auxiliar;
+	}
 }

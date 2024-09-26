@@ -1,8 +1,12 @@
 package entidades;
 
+
+
 public class Carta {
 	private Numero numero;
 	private String 	palo;
+	private String estado="N";
+	
 	
 	public Carta(Numero numero, String palo) {
 		
@@ -23,6 +27,12 @@ public class Carta {
 	}
 	public void mostrarCarta () {
 		System.out.println(getNumero().getNumeroCarta()+"-"+getPalo());
+	}
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 	
 	
