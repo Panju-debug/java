@@ -14,16 +14,19 @@ public class Juego {
 		return naipe;
 	}
 
-	public Juego() {
-		Naipe naipe = new Naipe();
-		naipeBarajado = naipe.barajar();
-	}
-
 	public ArrayList<ArrayList<Carta>> getCartasJugador() {
 		return cartasJugador;
 	}
 
+	public Juego() {
+		ArrayList<Carta> barajas = new Naipe().barajar();
+		this.naipeBarajado = barajas;
+	}
+
 	public Juego(ArrayList<String> jugadores) {
+		naipe = new Naipe();
+		naipeBarajado = naipe.barajar();
+		cartasJugador = new ArrayList<>();
 		for (int i = 0; i < jugadores.size(); i++) {
 			ArrayList<Carta> carta = new ArrayList<>();
 			cartasJugador.add(carta);
@@ -31,25 +34,42 @@ public class Juego {
 	}
 
 	public ArrayList<ArrayList<Carta>> entregarCartas(int cartasPorJugador) {
+		int carta = 0;
 
-		for (int i = 0; i < naipeBarajado.size(); i++) {
+		for (int i = 0; i < cartasPorJugador; i++) {
+
 			for (int a = 0; a < cartasJugador.size(); a++) {
-				cartasJugador.get(a).add(naipeBarajado.get(i));
+
+				if (carta < naipeBarajado.size()) {
+
+					cartasJugador.get(a).add(naipeBarajado.get(carta));
+					carta++;
+				}
 			}
-		}return cartasJugador;
-	}
-	public int devolverTotal(int id) {
-		int number=0;
-		for (int i = 0; i < cartasJugador.size(); i++) {
-			number = cartasJugador.get(i).get(i).getNumero().getValor();
-			number++;
-		}return number;
-	}
-	public String determinarGanador() {
-		String idGanador=nombre;
-		int SumaGanador=total;
-		for() {
-			
 		}
+		return cartasJugador;
+	}
+
+	public int devolverTotal(int idJugador) {
+		int valor = 0;
+		ArrayList<Carta> cartasDelJugador = cartasJugador.get(idJugador);
+		for (Carta carta : cartasDelJugador) {
+			valor += carta.getNumero().getValor();
+		}
+		return valor;
+	}
+
+	public String determinarGanador() {
+	    int sumaGanador = -1;
+	    String idGanador = "";
+	    for (int i = 0; i < cartasJugador.size(); i++) {
+	        int sumaCartas = devolverTotal(i);  
+	        if (sumaCartas > sumaGanador) {
+	            sumaGanador = sumaCartas;
+	            idGanador = "jugador " + (i + 1);  
+	        }
+	    }
+	    
+	    return idGanador;
 	}
 }

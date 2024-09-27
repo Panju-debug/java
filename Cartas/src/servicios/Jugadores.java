@@ -2,14 +2,12 @@ package servicios;
 
 import java.util.ArrayList;
 
-import entidades.Carta;
 
 
 public class Jugadores {
 	private ArrayList<String> jugadores = new ArrayList<>();
-	private ArrayList<ArrayList<Carta>> cartas = new ArrayList<>();
-
 	
+
 	public ArrayList<String> getJugadores() {
 		return jugadores;
 	}
@@ -22,16 +20,17 @@ public class Jugadores {
 		this.jugadores = jugadores;
 	}
 
-	public void jugar(String nombre) {
-		jugadores.add(nombre);
+	public void jugar() {
+		jugadores = new ArrayList<>();
+		jugadores.add("Jugador 1");
+		jugadores.add("Jugador 2");
+		jugadores.add("Jugador 3");
 		Juego juego = new Juego(jugadores);
-		this.cartas = juego.entregarCartas(5);
+		juego.entregarCartas(5);
 		for (int i = 0; i < jugadores.size(); i++) {
-			int total=juego.devolverTotal(nombre);
-			String id=juego.determinarGanador();
-			
+			System.out.println("Jugador " + (i + 1) + juego.devolverTotal(i));
 		}
+		String ganador = juego.determinarGanador();
+		System.out.println(ganador);
 	}
-
-	
 }
