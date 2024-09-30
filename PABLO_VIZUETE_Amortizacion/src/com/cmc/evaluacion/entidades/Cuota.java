@@ -57,7 +57,7 @@ public class Cuota {
 	}
 
 	public void setSaldo(double saldo) {
-		this.saldo = saldo;
+		this.saldo =utilitario.redondear(saldo);
 	}
 
 	public Cuota(int numero) {
