@@ -10,14 +10,25 @@ public class Cuota {
 	private double interes;
 	private double abonoCapital;
 	private double saldo;
-	Utilitario utilitario=new Utilitario();
+	Utilitario utilitario = new Utilitario();
+
+	public Cuota(int numero) {
+		this.numero = numero;
+	}
+
+	public void mostrarPrestamo() {
+		double abonoCapitalRedondeado = utilitario.redondear(abonoCapital);
+		System.out.println(utilitario.redondear(numero) + "  |" + utilitario.redondear(cuota) + "  |"
+				+ utilitario.redondear(inicio) + "    |" + utilitario.redondear(interes) + "    |"
+				+ abonoCapitalRedondeado + "   |" + utilitario.redondear(saldo));
+	}
+
 	public double getCuota() {
 		return cuota;
 	}
 
 	public void setCuota(double cuota) {
-		this.cuota =utilitario.redondear(cuota);
-		 
+		this.cuota = cuota;
 	}
 
 	public double getCapital() {
@@ -25,7 +36,7 @@ public class Cuota {
 	}
 
 	public void setCapital(double capital) {
-		this.capital = utilitario.redondear(capital);
+		this.capital = capital;
 	}
 
 	public double getInicio() {
@@ -33,7 +44,7 @@ public class Cuota {
 	}
 
 	public void setInicio(double inicio) {
-		this.inicio = utilitario.redondear(inicio);
+		this.inicio = inicio;
 	}
 
 	public double getInteres() {
@@ -41,7 +52,7 @@ public class Cuota {
 	}
 
 	public void setInteres(double interes) {
-		this.interes = utilitario.redondear(interes);
+		this.interes = interes;
 	}
 
 	public double getAbonoCapital() {
@@ -49,7 +60,7 @@ public class Cuota {
 	}
 
 	public void setAbonoCapital(double abonoCapital) {
-		this.abonoCapital = utilitario.redondear(abonoCapital);
+		this.abonoCapital = abonoCapital;
 	}
 
 	public double getSaldo() {
@@ -57,18 +68,6 @@ public class Cuota {
 	}
 
 	public void setSaldo(double saldo) {
-		this.saldo =utilitario.redondear(saldo);
+		this.saldo = saldo;
 	}
-
-	public Cuota(int numero) {
-
-		this.numero = numero;
-	}
-	
-	public void mostrarPrestamo() {
-		System.out.println(numero + " | " + getCuota() + " | " + getCapital() + " | " + getInteres() + " | "
-				+ getAbonoCapital() + " | " + getSaldo() + " | ");
-
-	}
-
 }

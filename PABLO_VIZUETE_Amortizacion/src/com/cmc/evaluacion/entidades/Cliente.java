@@ -3,56 +3,51 @@ package com.cmc.evaluacion.entidades;
 import java.util.ArrayList;
 
 public class Cliente {
-	private String cedula;
-	private String nombre;
-	private String apellido;
-	private ArrayList<Prestamo> prestamo=new ArrayList<>();
-	
-	
-	
+	 private String cedula;
+	    private String nombre;
+	    private String apellido;
+	    private ArrayList<Prestamo> prestamos = new ArrayList<>();
 
-	public ArrayList<Prestamo> getPrestamo() {
-		return prestamo;
-	}
+	    public void mostrarCliente() {
+	        System.out.println("Cliente:" + nombre + " " + apellido);
+	    }
 
-	public void setPrestamo(ArrayList<Prestamo> prestamo) {
-		this.prestamo = prestamo;
-	}
+	    public Cliente(String cedula, String nombre, String apellido) {
+	        this.cedula = cedula;
+	        this.nombre = nombre;
+	        this.apellido = apellido;
+	    }
 
-	public String getCedula() {
-		return cedula;
-	}
+	    public String getCedula() {
+	        return cedula;
+	    }
 
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
-	}
+	    public void setCedula(String cedula) {
+	        this.cedula = cedula;
+	    }
 
-	public String getNombre() {
-		return nombre;
-	}
+	    public String getNombre() {
+	        return nombre;
+	    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	    public void setNombre(String nombre) {
+	        this.nombre = nombre;
+	    }
 
-	public String getApellido() {
-		return apellido;
-	}
+	    public String getApellido() {
+	        return apellido;
+	    }
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
+	    public void setApellido(String apellido) {
+	        this.apellido = apellido;
+	    }
 
-	public Cliente(String cedula, String nombre, String apellido) {
+	    public ArrayList<Prestamo> getPrestamos() {
+	        return prestamos;
+	    }
 
-		this.cedula = cedula;
-		this.nombre = nombre;
-		this.apellido = apellido;
-	}
-
-	public void mostrarCliente() {
-		System.out.println("Cliente registrado:" + nombre + " " + apellido + "[Cedula=" + cedula + "nombre=" + nombre
-				+ "Apellido=" + apellido + "]");
-	}
+	    public void setPrestamos(ArrayList<Prestamo> prestamos) {
+	        this.prestamos = prestamos;
+	    }
 
 }
